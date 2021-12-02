@@ -1,4 +1,4 @@
-//SPDX-LICEN
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
 contract SmipleStorage{
@@ -15,13 +15,15 @@ contract SmipleStorage{
     }
 
     People public person = People({favouriteNumber:1,name:"Charudatta"});
-
+    //array
     People[] public people;
     //create map
     mapping(string=> uint256) public nameTOFavNum;
-
+    //name will be stored in memory
     function addPerson(string memory _name,uint256 _favNumber) public {
         people.push(People({favouriteNumber: _favNumber,name:_name}));
+        //creating a map
+        nameTOFavNum[_name] = _favNumber;
 
     }
 
